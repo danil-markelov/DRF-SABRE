@@ -94,7 +94,7 @@ def make_hamiltonian_superoperator_complex(S, d, J, b, n_N, n_H, w_1_N, w_1_H, w
         if i == 2:
             delta_w[i] = gammas["H"] * b * (1 + d[i] * 10 ** -6)
     H_z = delta_w[0] * S[0][2] - delta_w[1] * S[1][2] - delta_w[2] * S[2][2] + \
-          w_1_N * S[0][0] - w_1_H * (S[2][0] + S[1][0])
+          w_1_N * S[0][0] - w_1_H * S[1][0]
     H_j_hh = 2 * np.pi * J[1][2] * (S[1][2] @ S[2][2])
     H_j_nh = 2 * np.pi * J[0][1] * S[0][2] @ S[1][2]
     H = H_z + H_j_nh + H_j_hh
